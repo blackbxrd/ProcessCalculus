@@ -4,10 +4,16 @@ from requests import get
 import time
 import random
 import func
+import pandas as pd
 
 url = 'https://zabgu.ru/php/news.php?category=1&page='
-posts = []
-count = 1
+
+newsDM = pd.DataFrame()
+posts=func.parsing()
+func.output(posts,newsDM,file_name='date.csv')
+
+
+# func.parsing(count,posts)
 # while count <= 1:
 #     url = 'https://zabgu.ru/php/news.php?category=1&page=' + str(count)
 #     print(url)
@@ -34,11 +40,10 @@ count = 1
 #     else:
 #         print('empty')
 #         break
-func.parsing(count,posts)
+
     
 
-n = int(len(posts)) - 1 #узнаём сколько новостей всего записали
-count = 0
+#                                func.output(posts,count,n) вывод в консоль
 # while count <= n:  # count <= n
 #     info = posts[int(count)]
 #     day = info.find('p',{"class":"day"}).text
@@ -47,4 +52,20 @@ count = 0
 #     tegs = info.find('div',{"class":'markersContainer'}).text
 #     print(title, ' ', day,' ',year, tegs )
 #     count += 1
-func.output(posts,count,n)
+
+#                                func.output(posts,count,n,newsDM) вывод в ексель
+# while count <= n:  # count <= n
+#         info = posts[int(count)]#берём из листа 1 новость
+#         day = info.find('p',{"class":"day"}).text
+#         title = info.find('div',{"class":"headline"}).text
+#         year = info.find('p',{"class":"yearInTileNewsOnPageWithAllNews"}).text
+#         tagsRaw = posts[count].find('div', {'class': 'markersContainer'}).find_all('a', {'class': 'marker_news'})
+#         tags = [tagsRaw[k].text for k in range(0, len(tagsRaw))]
+#         date = day + ' ' + year
+#         print(title, ' ', day,' ', tags )
+#         newsDM = newsDM.append({'header':title, 'Date': date ,'tegs': tags}, True)
+#         count += 1
+
+# file_name = '.\data.csv'
+
+# newsDM.to_csv(file_name,sep='\t', encoding='UTF=16')
