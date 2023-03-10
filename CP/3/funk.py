@@ -19,7 +19,8 @@ def check_first_move(place):#проверка на первый ход
     else:
     
         print(" - Нет, это не возможно за один ход!")
-        
+        add=1
+    return add
     
     
 def move_queen (place,  k,  l,  m,  n):
@@ -39,11 +40,10 @@ def move_queen (place,  k,  l,  m,  n):
         
     
     print ("Возможно ли КОРОЛЕВОЙ попасть c поля (", k + 1, ";", l + 1, ") на поле (", m + 1, ";", n + 1, ") ? ")
-    check_first_move(place)
-    
+    add2=check_first_move(place)
+    return add2
 
     
-#"Что бы за 2-а хода, добраться до поля (" , m + 1 , ";" , n + 1 , "), в 1-ый ход нужно переместиться на поле (" , k + 1 , ";" , n + 1 , ")"
 
     
 def print_matrix(place):

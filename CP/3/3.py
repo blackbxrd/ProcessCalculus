@@ -20,7 +20,10 @@ n=n-1
 place[l][k] = 1
 place[n][m] = 1
 funk.print_matrix(place)
-funk.move_queen(place, k, l, m, n)
+add3=funk.move_queen(place, k, l, m, n)
+if add3==1:
+       print("Что бы за 2-а хода, добраться до поля (" , m + 1 , ";" , n + 1 , "), в 1-ый ход нужно переместиться на поле (" , k + 1 , ";" , n + 1 , ")")
+       
 
 
 

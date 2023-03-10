@@ -1,5 +1,18 @@
-Fsumm=0
-for i in range(1,101):
-    summ=(1/i**2)
-    Fsumm=Fsumm+summ
-print(Fsumm)
+###########################################################################
+#                                   Task 4 (114 з)
+#
+# Вычислить: 
+# з) алгебраическая сумма (in range(i = 1, 50)) i^-3
+#
+# https://ivtipm.github.io/Programming/Glava04/index04.htm#z114
+#
+###########################################################################
+
+n=int(input('Введите n'))
+f=1
+Fsumm=1
+for i in range(2,n+1):
+    f*=i
+    summ=(1-1/f)**2
+    Fsumm=Fsumm*summ
+print(f'Равно {Fsumm:.2f}')
