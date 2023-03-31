@@ -2,7 +2,7 @@
 #                                   Task 4 (114 з)
 #
 # Вычислить: 
-# з) алгебраическая сумма (in range(i = 1, 50)) i^-3
+# з) алгебраическая сумма (in range(i = 2, 10)) (1-(1/i!))^2
 #
 # https://ivtipm.github.io/Programming/Glava04/index04.htm#z114
 #

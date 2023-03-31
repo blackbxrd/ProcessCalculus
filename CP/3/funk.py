@@ -1,54 +1,19 @@
 
-
-def check_first_move(place):#проверка на первый ход
-    i = 0
-    j = 0
-    choice = 0
-    for  i in range(1,8):
-    
-        for j in range(1,8):
-        
-            if (place[i][j] == 1):
-                choice=+1
-        
-    
-    if (choice == 0):
-    
-        print(" - Да, это возможно сделать за 1 ход!")
-    
+def queen_attack(k, l, m, n):
+    """
+    Функция queen_attack проверяет, угрожает ли ферзь на поле (k, l) полю (m, n)
+    :param k: номер столбца, на котором находится ферзь
+    :param l: номер строки, на которой находится ферзь
+    :param m: номер столбца, на котором находится другая фигура
+    :param n: номер строки, на которой находится другая фигура
+    :return: True, если ферзь угрожает полю (m, n), иначе - False
+    """
+    if k == m or l == n or abs(k - m) == abs(l - n):
+        # Если ферзь находится на одной вертикали, горизонтали или диагонали с другой фигурой,
+        # то он угрожает ей
+        return True
     else:
-    
-        print(" - Нет, это не возможно за один ход!")
-        add=1
-    return add
-    
-    
-def move_queen (place,  k,  l,  m,  n):
-    
-    for i in range(0, 8):
-    
-        place[l][i] = 7
-        place[i][k] = 7
-        if (((l + i) <= 8) and ((k + i) <= 8)):
-            place[l + i][k + i] = 7
-        if (((l + i) <= 8) and ((k - i) > 0)):
-            place[l + i][k - i] = 7
-        if (((l - i) > 0) and ((k + i) <= 8)):
-            place[l - i][k + i] = 7
-        if (((l - i) > 0) and ((k - i) > 0)):
-            place[l - i][k - i] = 7
-        
-    
-    print ("Возможно ли КОРОЛЕВОЙ попасть c поля (", k + 1, ";", l + 1, ") на поле (", m + 1, ";", n + 1, ") ? ")
-    add2=check_first_move(place)
-    return add2
-
-    
-
-    
-def print_matrix(place):
-    for arr in place:
-        print(arr)
+        return False
 
 
 

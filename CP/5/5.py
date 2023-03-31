@@ -6,41 +6,45 @@ import random
 def zapolni_list(list):
 
     n = int(input('Введите кол-во элементов списка: '))
-    list=[0] * n
-    for i in range(0,n+1):
+    list=[] 
+    for i in range(n):
+        list.append(float(input(f"Введите действительное число a{i+1}: ")))
         
-        list[i]=int(input((f'Введите значение a{i}=')))
+        
         
     return list
 
 def rand_list(list):
     n = int(input('Введите кол-во элементов списка: '))
-    list=[0] * n
-    for i in range(0,n+1):
+    list=[] 
+    for i in range(n):
         
-        list[i]=random.randint(0, 100)
+         list.append(random.randint(0, 100))
+    print(list)
         
     return list
 
 def func_sum(list):
     
     sum=0
-    for i in range(1,len(list)):
+    for i in range(len(list)):
         
         sum+=list[i]
         
     return sum
         
-
-chek=int(input('1-заполнить самому\n 2-автозаполнение'))
+list=[]
+chek=int(input('1-заполнить самому\n2-автозаполнение'))
 if chek==1:
-    print(zapolni_list(list))
+   list2=zapolni_list(list)
 elif chek==2:
-    print(rand_list(list))
+   list2=rand_list(list)
 else:
     
     raise Exception('Ошибка') 
-print(f'res = {2*func_sum(list)**2}')
+sum_a = sum(list2)
+result = 2 * sum_a ** 2
+print(f'res = {result}')
 
 
 

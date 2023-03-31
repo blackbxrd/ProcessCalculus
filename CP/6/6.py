@@ -1,8 +1,11 @@
-n=int(input("Введите n: "))
-k=0
-for i in range(1,n+1):
-    print("a",i,' =',end='')
-    a=int(input())
-    if (a%2!=0):
-        k+=1
-print('Столько элементов нечётные ->',k)
+n = int(input("Введите количество чисел в последовательности: "))
+a = []
+for i in range(n):
+    a.append(int(input(f"Введите число a{i+1}: ")))
+
+count = 0
+for num in a:
+    if num % 2 != 0:
+        count += 1
+
+print(f"Количество нечетных чисел в последовательности: {count}")
